@@ -1,0 +1,8 @@
+Flask
+flask_cors
+flask-sqlalchemy
+google-generativeai
+python-dotenv
+stripe
+sqlalchemy
+mysql-connector-python
