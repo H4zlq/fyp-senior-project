@@ -21,8 +21,11 @@ class UserService
     return $this->database->singleAsClass(UserModel::class);
   }
 
-  public function loginUser($username, $password, $test)
+  public function loginUser()
   {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
     $query = "SELECT id, username, password, role FROM $this->table WHERE username = ?";
     $this->database->query($query);
 
