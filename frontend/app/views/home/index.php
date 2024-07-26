@@ -1,13 +1,22 @@
   <div id="alertContainer" class="alert-container"></div>
   <?= Flasher::flash(true) ?>
-  <section class="hero">
-    <div class="hero-content">
-      <h1>A.I Code Converter</h1>
-      <p>Convert your code to any language using our A.I Code Converter</p>
-      <button style="margin-top: 5px;" onclick="handleGetStarted('<?= BASE_URL ?>/signup')">Get Started</button>
-    </div>
-  </section>
-
+  <?php if (!Session::exists('loggedin') || !Session::get('loggedin')) : ?>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>A.I Code Converter</h1>
+        <p>Convert your code to any language using our A.I Code Converter</p>
+        <button style="margin-top: 5px;" onclick="handleGetStarted('<?= BASE_URL ?>/signup')">Get Started</button>
+      </div>
+    </section>
+  <?php else : ?>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome, <?= Session::get('username') ?></h1>
+        <p>Convert your code to any language using our A.I Code Converter</p>
+        <button style="margin-top: 5px;" onclick="handleGetStarted('<?= BASE_URL ?>/converter')">Get Started</button>
+      </div>
+    </section>
+  <?php endif; ?>
   <section class="features">
     <div class="feature">
       <i class="fas fa-bolt fa-3x"></i>
