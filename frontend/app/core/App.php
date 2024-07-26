@@ -45,13 +45,7 @@ class App
       }
     }
 
-    if (!empty($url)) {
-      if (count($url) > 1) {
-        $this->params = [$url];
-      } else {
-        $this->params = array_values($url);
-      }
-    }
+    $this->params = $url ? array_values($url) : [];
 
     call_user_func_array([$this->controller, $this->method], $this->params);
   }
