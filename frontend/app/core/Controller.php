@@ -19,12 +19,6 @@ class Controller
     return new $service;
   }
 
-  public function helper($helper)
-  {
-    require_once '../app/helpers/' . $helper . '.php';
-    return new $helper;
-  }
-
   public function redirect($url)
   {
     header('Location: ' . BASE_URL . $url);
