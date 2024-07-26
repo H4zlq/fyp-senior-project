@@ -19,10 +19,8 @@ class LoginController extends Controller
   {
     $this->model('UserModel');
     $service = $this->service('UserService');
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    $isLoggedIn = $service->loginUser($username, $password, $params);
+    $isLoggedIn = $service->loginUser();
 
     if ($params === 'request') {
       $this->request();
