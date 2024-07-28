@@ -4,8 +4,8 @@ class ForumController extends Controller
 {
   public function dashboard()
   {
-    $this->model('ForumModel');
-    $forumService = $this->service('ForumService');
+    $this->model(ForumModel::class);
+    $forumService = $this->service(ForumService::class);
 
     $username = Session::get('username');
     $questions = $forumService->fetchQuestions();
@@ -22,8 +22,8 @@ class ForumController extends Controller
 
   public function search($params = [])
   {
-    $this->model('ForumModel');
-    $forumService = $this->service('ForumService');
+    $this->model(ForumModel::class);
+    $forumService = $this->service(ForumService::class);
 
     $username = Session::get('username');
     $questions = $forumService->fetchQuestions();
@@ -47,8 +47,8 @@ class ForumController extends Controller
   public function delete($params = [])
   {
     $id = $params[4];
-    $this->model('ForumModel');
-    $adminService = $this->service('AdminService');
+    $this->model(ForumModel::class);
+    $adminService = $this->service(AdminService::class);
 
     if ($params[3] == 'question') {
       $isDeleted = $adminService->deleteQuestion($id);

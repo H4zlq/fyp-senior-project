@@ -4,8 +4,8 @@ class UserController extends Controller
 {
   public function dashboard()
   {
-    $this->model('UserModel');
-    $adminService = $this->service('AdminService');
+    $this->model(UserModel::class);
+    $adminService = $this->service(AdminService::class);
 
     $username = Session::get('username');
     $users = $adminService->getUsers();
@@ -21,8 +21,8 @@ class UserController extends Controller
   public function edit($params = [])
   {
     $id = $params[3];
-    $this->model('UserModel');
-    $userService = $this->service('UserService');
+    $this->model(UserModel::class);
+    $userService = $this->service(UserService::class);
 
     $user = $userService->getUserById($id);
     $name = $user->getName();
@@ -45,8 +45,8 @@ class UserController extends Controller
 
   public function update()
   {
-    $this->model('UserModel');
-    $adminService = $this->service('AdminService');
+    $this->model(UserModel::class);
+    $adminService = $this->service(AdminService::class);
 
     $isUpdated = $adminService->updateUser();
 
@@ -62,8 +62,8 @@ class UserController extends Controller
   public function block($params = [])
   {
     $id = $params[3];
-    $this->model('UserModel');
-    $adminService = $this->service('AdminService');
+    $this->model(UserModel::class);
+    $adminService = $this->service(AdminService::class);
 
     $isBlocked = $adminService->blockUser($id);
 
@@ -79,8 +79,8 @@ class UserController extends Controller
   public function unblock($params = [])
   {
     $id = $params[3];
-    $this->model('UserModel');
-    $adminService = $this->service('AdminService');
+    $this->model(UserModel::class);
+    $adminService = $this->service(AdminService::class);
 
     $isBlocked = $adminService->unblockUser($id);
 
@@ -96,8 +96,8 @@ class UserController extends Controller
   public function delete($params = [])
   {
     $id = $params[3];
-    $this->model('UserModel');
-    $adminService = $this->service('AdminService');
+    $this->model(UserModel::class);
+    $adminService = $this->service(AdminService::class);
 
     $isDeleted = $adminService->deleteUser($id);
 
@@ -112,8 +112,8 @@ class UserController extends Controller
 
   public function search()
   {
-    $this->model('UserModel');
-    $adminService = $this->service('AdminService');
+    $this->model(UserModel::class);
+    $adminService = $this->service(AdminService::class);
 
     $username = Session::get('username');
     $users = $adminService->searchUser();

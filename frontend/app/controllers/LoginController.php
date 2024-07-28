@@ -17,8 +17,8 @@ class LoginController extends Controller
 
   public function user($params = [])
   {
-    $this->model('UserModel');
-    $service = $this->service('UserService');
+    $this->model(UserModel::class);
+    $service = $this->service(UserService::class);
 
     $isLoggedIn = $service->loginUser();
 
@@ -35,8 +35,8 @@ class LoginController extends Controller
 
   public function request()
   {
-    $this->model('UserModel');
-    $service = $this->service('UserService');
+    $this->model(UserModel::class);
+    $service = $this->service(UserService::class);
 
     $isRequested = $service->submitRequest();
 

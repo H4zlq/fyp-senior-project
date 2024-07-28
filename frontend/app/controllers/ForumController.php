@@ -4,8 +4,8 @@ class ForumController extends Controller
 {
   public function index()
   {
-    $this->model('ForumModel');
-    $forumService = $this->service('ForumService');
+    $this->model(ForumModel::class);
+    $forumService = $this->service(ForumService::class);
 
     $questions = $forumService->fetchQuestions();
     $answers = $forumService->fetchAnswers();
@@ -20,8 +20,8 @@ class ForumController extends Controller
 
   public function search()
   {
-    $this->model('ForumModel');
-    $forumService = $this->service('ForumService');
+    $this->model(ForumModel::class);
+    $forumService = $this->service(ForumService::class);
 
     $questions = $forumService->searchQuestions();
     $answers = $forumService->fetchAnswers();
@@ -36,8 +36,8 @@ class ForumController extends Controller
 
   public function submit($params = [])
   {
-    $this->model('ForumModel');
-    $forumService = $this->service('ForumService');
+    $this->model(ForumModel::class);
+    $forumService = $this->service(ForumService::class);
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if ($params === 'question') {
@@ -67,8 +67,8 @@ class ForumController extends Controller
 
   public function delete($params = [])
   {
-    $this->model('ForumModel');
-    $forumService = $this->service('ForumService');
+    $this->model(ForumModel::class);
+    $forumService = $this->service(ForumService::class);
 
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       if ($params[2] == 'question') {

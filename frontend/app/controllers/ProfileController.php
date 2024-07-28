@@ -4,10 +4,10 @@ class ProfileController extends Controller
 {
   public function index()
   {
-    $this->model('UserModel');
+    $this->model(UserModel::class);
     $this->model('SubscriptionModel');
-    $userService = $this->service('UserService');
-    $subscriptionService = $this->service('SubscriptionService');
+    $userService = $this->service(UserService::class);
+    $subscriptionService = $this->service(SubscriptionService::class);
     $user = $userService->getUserById();
     $id = $user->getId();
     $name = $user->getName();
@@ -40,10 +40,10 @@ class ProfileController extends Controller
 
   public function edit()
   {
-    $this->model('UserModel');
+    $this->model(UserModel::class);
     $this->model('SubscriptionModel');
-    $userService = $this->service('UserService');
-    $subscriptionService = $this->service('SubscriptionService');
+    $userService = $this->service(UserService::class);
+    $subscriptionService = $this->service(SubscriptionService::class);
     $user = $userService->getUserById();
     $id = $user->getId();
     $name = $user->getName();
@@ -70,8 +70,8 @@ class ProfileController extends Controller
 
   public function delete($params)
   {
-    $this->model('UserModel');
-    $userService = $this->service('UserService');
+    $this->model(UserModel::class);
+    $userService = $this->service(UserService::class);
 
     if ($params == 'request') {
       $isRequested = $userService->submitAccountDeletionRequest();
@@ -88,8 +88,8 @@ class ProfileController extends Controller
 
   public function update()
   {
-    $this->model('UserModel');
-    $userService = $this->service('UserService');
+    $this->model(UserModel::class);
+    $userService = $this->service(UserService::class);
 
     $isUpdated = $userService->updateUser();
 

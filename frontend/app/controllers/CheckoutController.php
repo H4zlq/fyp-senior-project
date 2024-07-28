@@ -4,8 +4,8 @@ class CheckoutController extends Controller
 {
   public function index($params = [])
   {
-    $this->model('UserModel');
-    $service = $this->service('UserService');
+    $this->model(UserModel::class);
+    $service = $this->service(UserService::class);
 
     $user = $service->getUserById();
     $username = Session::get('username');

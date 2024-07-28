@@ -4,7 +4,7 @@ class DashboardController extends Controller
 {
   public function dashboard()
   {
-    $adminService = $this->service('AdminService');
+    $adminService = $this->service(AdminService::class);
 
     $this->view('admin/templates/header');
     $this->view('admin/dashboard/index', [

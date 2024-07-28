@@ -5,7 +5,7 @@ class NotificationController extends Controller
   public function index()
   {
     $this->model('NotificationModel');
-    $adminService = $this->service('AdminService');
+    $adminService = $this->service(AdminService::class);
 
     $userRequest = $adminService->getUserRequests();
     $userCount = $adminService->getUserRequestsCount();
@@ -20,7 +20,7 @@ class NotificationController extends Controller
   {
     $id = $_POST['id'];
     $this->model('NotificationModel');
-    $adminService = $this->service('AdminService');
+    $adminService = $this->service(AdminService::class);
 
     $isUpdated = $adminService->updateUserRequest($id);
 
