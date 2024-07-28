@@ -7,7 +7,11 @@ class ProfileController extends Controller
     $this->model(UserModel::class);
     $this->model('SubscriptionModel');
     $userService = $this->service(UserService::class);
+<<<<<<< HEAD
     $subscriptionService = $this->service(SubscriptionService::class);
+=======
+    $subscriptionService = $this->service('SubscriptionService');
+>>>>>>> a7c89223fbea635401f12c34a7a6615501b81d14
     $user = $userService->getUserById();
     $id = $user->getId();
     $name = $user->getName();
@@ -43,7 +47,11 @@ class ProfileController extends Controller
     $this->model(UserModel::class);
     $this->model('SubscriptionModel');
     $userService = $this->service(UserService::class);
+<<<<<<< HEAD
     $subscriptionService = $this->service(SubscriptionService::class);
+=======
+    $subscriptionService = $this->service('SubscriptionService');
+>>>>>>> a7c89223fbea635401f12c34a7a6615501b81d14
     $user = $userService->getUserById();
     $id = $user->getId();
     $name = $user->getName();
