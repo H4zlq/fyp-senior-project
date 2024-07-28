@@ -5,11 +5,7 @@ class UserController extends Controller
   public function dashboard()
   {
     $this->model(UserModel::class);
-<<<<<<< HEAD
     $adminService = $this->service(AdminService::class);
-=======
-    $adminService = $this->service('AdminService');
->>>>>>> a7c89223fbea635401f12c34a7a6615501b81d14
 
     $username = Session::get('username');
     $users = $adminService->getUsers();
@@ -50,11 +46,7 @@ class UserController extends Controller
   public function update()
   {
     $this->model(UserModel::class);
-<<<<<<< HEAD
     $adminService = $this->service(AdminService::class);
-=======
-    $adminService = $this->service('AdminService');
->>>>>>> a7c89223fbea635401f12c34a7a6615501b81d14
 
     $isUpdated = $adminService->updateUser();
 
@@ -71,11 +63,7 @@ class UserController extends Controller
   {
     $id = $params[3];
     $this->model(UserModel::class);
-<<<<<<< HEAD
     $adminService = $this->service(AdminService::class);
-=======
-    $adminService = $this->service('AdminService');
->>>>>>> a7c89223fbea635401f12c34a7a6615501b81d14
 
     $isBlocked = $adminService->blockUser($id);
 
@@ -92,11 +80,7 @@ class UserController extends Controller
   {
     $id = $params[3];
     $this->model(UserModel::class);
-<<<<<<< HEAD
     $adminService = $this->service(AdminService::class);
-=======
-    $adminService = $this->service('AdminService');
->>>>>>> a7c89223fbea635401f12c34a7a6615501b81d14
 
     $isBlocked = $adminService->unblockUser($id);
 
@@ -113,11 +97,7 @@ class UserController extends Controller
   {
     $id = $params[3];
     $this->model(UserModel::class);
-<<<<<<< HEAD
     $adminService = $this->service(AdminService::class);
-=======
-    $adminService = $this->service('AdminService');
->>>>>>> a7c89223fbea635401f12c34a7a6615501b81d14
 
     $isDeleted = $adminService->deleteUser($id);
 
@@ -133,11 +113,7 @@ class UserController extends Controller
   public function search()
   {
     $this->model(UserModel::class);
-<<<<<<< HEAD
     $adminService = $this->service(AdminService::class);
-=======
-    $adminService = $this->service('AdminService');
->>>>>>> a7c89223fbea635401f12c34a7a6615501b81d14
 
     $username = Session::get('username');
     $users = $adminService->searchUser();

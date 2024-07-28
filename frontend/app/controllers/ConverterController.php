@@ -5,13 +5,9 @@ class ConverterController extends Controller
   public function index()
   {
     $this->model(UserModel::class);
-    $this->model('SubscriptionModel');
+    $this->model(SubscriptionModel::class);
     $userService = $this->service(UserService::class);
-<<<<<<< HEAD
     $subscriptionService = $this->service(SubscriptionService::class);
-=======
-    $subscriptionService = $this->service('SubscriptionService');
->>>>>>> a7c89223fbea635401f12c34a7a6615501b81d14
 
     $id = null;
     $username = null;
