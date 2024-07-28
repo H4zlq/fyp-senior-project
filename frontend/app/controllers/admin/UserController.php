@@ -4,7 +4,7 @@ class UserController extends Controller
 {
   public function dashboard()
   {
-    $this->model('UserModel');
+    $this->model(UserModel::class);
     $adminService = $this->service('AdminService');
 
     $username = Session::get('username');
@@ -21,8 +21,8 @@ class UserController extends Controller
   public function edit($params = [])
   {
     $id = $params[3];
-    $this->model('UserModel');
-    $userService = $this->service('UserService');
+    $this->model(UserModel::class);
+    $userService = $this->service(UserService::class);
 
     $user = $userService->getUserById($id);
     $name = $user->getName();
@@ -45,7 +45,7 @@ class UserController extends Controller
 
   public function update()
   {
-    $this->model('UserModel');
+    $this->model(UserModel::class);
     $adminService = $this->service('AdminService');
 
     $isUpdated = $adminService->updateUser();
@@ -62,7 +62,7 @@ class UserController extends Controller
   public function block($params = [])
   {
     $id = $params[3];
-    $this->model('UserModel');
+    $this->model(UserModel::class);
     $adminService = $this->service('AdminService');
 
     $isBlocked = $adminService->blockUser($id);
@@ -79,7 +79,7 @@ class UserController extends Controller
   public function unblock($params = [])
   {
     $id = $params[3];
-    $this->model('UserModel');
+    $this->model(UserModel::class);
     $adminService = $this->service('AdminService');
 
     $isBlocked = $adminService->unblockUser($id);
@@ -96,7 +96,7 @@ class UserController extends Controller
   public function delete($params = [])
   {
     $id = $params[3];
-    $this->model('UserModel');
+    $this->model(UserModel::class);
     $adminService = $this->service('AdminService');
 
     $isDeleted = $adminService->deleteUser($id);
@@ -112,7 +112,7 @@ class UserController extends Controller
 
   public function search()
   {
-    $this->model('UserModel');
+    $this->model(UserModel::class);
     $adminService = $this->service('AdminService');
 
     $username = Session::get('username');

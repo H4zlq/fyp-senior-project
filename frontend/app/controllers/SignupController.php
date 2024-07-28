@@ -11,8 +11,8 @@ class SignupController extends Controller
 
   public function user()
   {
-    $this->model('UserModel');
-    $service = $this->service('UserService');
+    $this->model(UserModel::class);
+    $service = $this->service(UserService::class);
     $username = $_POST['username'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
